@@ -1,0 +1,1 @@
+ALTER TABLE `users` MODIFY COLUMN `active` int NOT NULL DEFAULT 1;

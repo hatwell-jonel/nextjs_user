@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-
+import { Toaster } from "@/components/ui/sonner";
+import MainSidebar from "@/components/MainSidebar";
+import MainHeader from "@/components/MainHeader";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -16,7 +18,57 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className} bg-slate-300`}>
+
+          <MainSidebar />
+
+        <div className="flex-1 flex flex-col">
+        <MainHeader />  
+        {/* <main className="flex-1 p-6">
+          {children}
+        </main> */}
+      </div>
+
+        {/* <header className="h-14 shadow-md bg-white w-full ">
+          header
+        </header>
+
+        <div className="grid grid-cols-[250px_1fr]  h-screen">
+
+          <aside className="bg-white shadow-inner p-4 max-w-xs">
+            <nav>
+              <ul className="space-y-4">
+                <li>
+                  <a href="#" className="text-blue-600 hover:text-blue-800">
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-blue-600 hover:text-blue-800">
+                    About
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-blue-600 hover:text-blue-800">
+                    Services
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-blue-600 hover:text-blue-800">
+                    Contact
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </aside>
+
+          <main className="p-6 border">
+            {children}
+          </main>
+        </div> */}
+     
+        <Toaster />
+      </body>
     </html>
   );
 }

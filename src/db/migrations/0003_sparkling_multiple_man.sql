@@ -1,0 +1,1 @@
+ALTER TABLE `users` MODIFY COLUMN `age` varchar(3) NOT NULL;
